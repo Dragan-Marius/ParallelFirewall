@@ -3,6 +3,7 @@
 A high-performance, concurrent network packet filtering system implemented in C, utilizing the Producer-Consumer architecture and POSIX Threads.
 
  🚀 Overview
+This project is built on top of a skeleton provided by the UPB Operating Systems course. My core contributions are the concurrency logic and synchronization mechanisms, specifically implementing the thread-safe Ring Buffer (ring_buffer.c) and the consumer thread pool architecture (consumer.c, firewall.c).
 This project simulates a backend firewall that analyzes incoming network packets, validates them against allowed source IPs, and logs the `PASS` or `DROP` decisions. To maximize CPU throughput and handle large volumes of data, the system processes packets concurrently using a robust multi-threaded engine built from scratch using `pthreads`.
 
  🏗️ Technical Architecture
@@ -33,4 +34,4 @@ This project was developed upon a university-provided Operating Systems skeleton
 
  Build
 ```bash
-make
+make ./firewall <input-file> <output-file> <num-consumers:1-32>
